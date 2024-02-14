@@ -7,24 +7,23 @@ namespace Console_RPG
     {
         public string name;
 
-        public int currentHP, maxHP;
-        public int currentMana, maxMana;
+        public int currentSanity, maxSanity;
+        public int currentEnergy, maxEnergy;
 
         //Composition
         public Stats stats;
 
 
-        public Entity(string name, int hp, int mana, Stats stats)
+        public Entity(string name, int sanity, int energy, Stats stats)
         {
             this.name = name;
-            this.currentHP = hp;
-            this.maxHP = hp;
-            this.currentMana = mana;
-            this.maxMana = mana;
+            this.currentSanity = sanity;
+            this.maxSanity = sanity;
+            this.currentEnergy = energy;
+            this.maxEnergy = energy;
             this.stats = stats;
         }
 
-        public abstract Entity ChooseTarget(List<Entity> choices);
         public abstract void Attack(Entity target);
     }
 }
