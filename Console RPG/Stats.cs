@@ -4,15 +4,11 @@
     {
         public int attack;
         public int defense;
-        public int magicAtk;
-        public int magicDef;
 
-        public Stats(int attack, int defense, int magicAtk, int magicDef)
+        public Stats(int attack, int defense)
         {
             this.attack = attack;
             this.defense = defense;
-            this.magicAtk = magicAtk;
-            this.magicDef = magicDef;
         }
     }
 }

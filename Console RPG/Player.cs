@@ -6,7 +6,7 @@ namespace Console_RPG
     //Inheritance
     class Player : Entity
     {
-        public Player(string name, int sanity, int mana, Stats stats) : base(name, sanity, mana, stats) { }
+        public Player(string name, int sanity, int energy, Stats stats) : base(name, sanity, energy, stats) { }
 
         public static Entity ChooseTarget(List<Entity> choices)
         {

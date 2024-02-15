@@ -7,7 +7,7 @@ namespace Console_RPG
     {
         public int coinsDropped;
 
-        public Enemy(string name, int sanity, int mana, Stats stats, int coinsDropped) : base(name, sanity, mana, stats)
+        public Enemy(string name, int sanity, int energy, Stats stats, int coinsDropped) : base(name, sanity, energy, stats)
         {
             this.coinsDropped = coinsDropped;
         }
