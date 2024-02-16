@@ -55,6 +55,7 @@ namespace Console_RPG
             if (!(this.west is null))
                 Console.WriteLine("WEST: " + this.west.name);
             string direction = Console.ReadLine();
+            Console.Clear();
             Location nextLocation = null;
 
             if (direction == "north")
