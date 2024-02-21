@@ -6,13 +6,15 @@ namespace Console_RPG
     //Inheritance
     class Player : Entity
     {
+        
+        public static Player player = new Player("Sophie", "Literally you.", 50, 5, new Stats(10, 0));
+
         public Player(string name, string description, int sanity, int energy, Stats stats) : base(name, description, sanity, energy, stats) { }
 
         public static Entity ChooseTarget(List<Entity> choices)
         {
             Console.WriteLine("Who would you like to use this action on?");
-            Console.WriteLine();
-            return choices[Int32.Parse(Console.ReadLine())];
+            return null;
             
         }
         public override void Attack(Entity target)
@@ -24,5 +26,6 @@ namespace Console_RPG
         {
             item.Use(this, target);
         }
+
     }
 }
