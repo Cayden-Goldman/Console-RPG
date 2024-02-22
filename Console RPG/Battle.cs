@@ -17,8 +17,33 @@ namespace Console_RPG
 
         public void Resolve(List<Player> players)
         {
-            Console.WriteLine(players[0].name);
+            //Loop the turn system
+            while (true)
+            {
+                //Loop through all players(only one here but still)
+                foreach (var item in players)
+                {
+                    Console.WriteLine(item.name + "'s Turn:");
+                    item.DoTurn(players, enemies);
+                }
+                //Loop through all enemies
+                foreach (var item in enemies)
+                {
+                    Console.WriteLine(item.name + "'s Turn:");
+                    item.DoTurn(players, enemies);
+                }
 
+                if (players.TrueForAll(player => player.currentSanity <= 0))
+                {
+                    Console.WriteLine("You died, womp womp :(");
+                    break;
+                }
+                if (enemies.TrueForAll(enemy => enemy.currentSanity <= 0))
+                {
+                    Console.WriteLine("You won, YIPPEE :)");
+                    break;
+                }
+            }
         }
     }
 }

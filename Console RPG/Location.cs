@@ -65,8 +65,17 @@ namespace Console_RPG
 
         public void Resolve(List<Player> players)
         {
-            Console.WriteLine("You have entered " + this.name);
-            Console.WriteLine(this.description);
+            if(this.name == "A Cellar")
+            {
+                Console.WriteLine("You wake up in" + this.name);
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("You have entered " + this.name);
+                Console.WriteLine(this.description);
+                Console.WriteLine();
+            }
 
             //Null checking
             battle?.Resolve(players);

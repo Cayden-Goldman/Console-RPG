@@ -8,40 +8,40 @@ namespace Console_RPG
     {
         static void Main(string[] args)
         {
-            PrintLineSlow("The voices...");
-            Thread.Sleep(50);
-            PrintLineFast("Enter to continue.");
-            Console.ReadLine();
-            Console.Clear();
-            PrintLineSlow("The voices are getting stronger...");
-            Thread.Sleep(50);
-            PrintLineFast("Enter to continue.");
-            Console.ReadLine();
-            Console.Clear();
-            PrintLineSlow("I can't get them out...");
-            Thread.Sleep(50);
-            PrintLineFast("Enter to continue.");
-            Console.ReadLine();
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            PrintLineSlow("One voice in particular stands out...");
-            Thread.Sleep(50);
-            PrintLineFast("Enter to continue.");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.ReadLine();
-            Console.Clear();
-            PrintLineSlow("Sophie...");
-            Thread.Sleep(500);
-            Console.Clear();
-            PrintLineSlow("You must wake up...");
-            Thread.Sleep(500);
-            Console.Clear();
-            PrintLineSlow("You must get out...");
-            Thread.Sleep(500);
-            Console.Clear();
-            PrintLineSlow("You are our only hope to escape...");
-            Thread.Sleep(500);
-            Console.Clear();
+            //PrintLineSlow("The voices...");
+            //Thread.Sleep(50);
+            //PrintLineFast("Enter to continue.");
+            //Console.ReadLine();
+            //Console.Clear();
+            //PrintLineSlow("The voices are getting stronger...");
+            //Thread.Sleep(50);
+            //PrintLineFast("Enter to continue.");
+            //Console.ReadLine();
+            //Console.Clear();
+            //PrintLineSlow("I can't get them out...");
+            //Thread.Sleep(50);
+            //PrintLineFast("Enter to continue.");
+            //Console.ReadLine();
+            //Console.Clear();
+            //Console.ForegroundColor = ConsoleColor.Blue;
+            //PrintLineSlow("One voice in particular stands out...");
+            //Thread.Sleep(50);
+            //PrintLineFast("Enter to continue.");
+            //Console.ForegroundColor = ConsoleColor.White;
+            //Console.ReadLine();
+            //Console.Clear();
+            //PrintLineSlow("Sophie...");
+            //Thread.Sleep(500);
+            //Console.Clear();
+            //PrintLineSlow("You must wake up...");
+            //Thread.Sleep(500);
+            //Console.Clear();
+            //PrintLineSlow("You must get out...");
+            //Thread.Sleep(500);
+            //Console.Clear();
+            //PrintLineSlow("You are our only hope to escape...");
+            //Thread.Sleep(500);
+            //Console.Clear();
             Location.cellar.SetNearbyLocations(east: Location.hall);
             Location.hall.SetNearbyLocations(east: Location.midNowhere1);
             Location.midNowhere1.SetNearbyLocations(north: Location.midNowhere2, east: Location.midMidNowhere, south: Location.midNowhere3);
@@ -52,7 +52,7 @@ namespace Console_RPG
             Location.theGrave.SetNearbyLocations(south: Location.midNowhere7);
             Location.theHall.SetNearbyLocations(west: Location.midNowhere4);
 
-            Location.cellar.Resolve(new List<Player>() {Player.player});
+            Location.theGrave.Resolve(new List<Player>() {Player.player});
         }
         public static void PrintLineSlow(string output)
         {

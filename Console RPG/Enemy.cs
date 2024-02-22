@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Console_RPG
 {
@@ -12,10 +13,6 @@ namespace Console_RPG
             this.coinsDropped = coinsDropped;
         }
 
-        public override void Attack(Entity target)
-        {
-            Console.WriteLine(this.name + " attacked " + target.name + "!");
-        }
     }
 
     class Dog : Enemy
@@ -27,6 +24,24 @@ namespace Console_RPG
         {
 
         }
+
+        public override Entity ChooseTarget(List<Entity> choices)
+        {
+            return choices[0];
+        }
+
+        public override void DoTurn(List<Player> players, List<Enemy> enemies)
+        {
+            Entity target = ChooseTarget(players.Cast<Entity>().ToList());
+            Attack(target);
+        }
+        public override void Attack(Entity target)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
+            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
     class Creature : Enemy
     {
@@ -35,6 +50,24 @@ namespace Console_RPG
         public Creature(string name, string description, int sanity, int energy, Stats stats, int coinsDropped) : base(name, description, sanity, energy, stats, coinsDropped)
         {
 
+        }
+
+        public override Entity ChooseTarget(List<Entity> choices)
+        {
+            return choices[0];
+        }
+
+        public override void DoTurn(List<Player> players, List<Enemy> enemies)
+        {
+            Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
+            Attack(target);
+        }
+        public override void Attack(Entity target)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
+            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
     class Derek : Enemy
@@ -45,6 +78,24 @@ namespace Console_RPG
         public Derek(string name, string description, int sanity, int energy, Stats stats, int coinsDropped) : base(name, description, sanity, energy, stats, coinsDropped)
         {
 
+        }
+
+        public override Entity ChooseTarget(List<Entity> choices)
+        {
+            return choices[0];
+        }
+
+        public override void DoTurn(List<Player> players, List<Enemy> enemies)
+        {
+            Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
+            Attack(target);
+        }
+        public override void Attack(Entity target)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
+            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 

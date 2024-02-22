@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Console_RPG
 {
@@ -11,15 +12,31 @@ namespace Console_RPG
 
         public Player(string name, string description, int sanity, int energy, Stats stats) : base(name, description, sanity, energy, stats) { }
 
-        public static Entity ChooseTarget(List<Entity> choices)
+        public override Entity ChooseTarget(List<Entity> choices)
         {
             Console.WriteLine("Who would you like to use this action on?");
-            return null;
+            for (int i = 0; i < choices.Count; i++)
+            {
+                Console.Write($"{i + 1}: {choices[i].name}  ");
+            }
+            Console.WriteLine();
+
+            int index = Convert.ToInt32(Console.ReadLine());
+            return choices[index - 1];
             
         }
         public override void Attack(Entity target)
         {
-            Console.WriteLine(this.name + " attacked " + target.name + "!");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
+            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public override void DoTurn(List<Player> players, List<Enemy> enemies)
+        {
+            Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
+            Attack(target);
         }
 
         public void UseItem(Item item, Entity target)
