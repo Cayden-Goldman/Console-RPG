@@ -73,7 +73,7 @@ namespace Console_RPG
     class Derek : Enemy
     {
 
-        public static Derek derek = new Derek("Ghost of Derek Herrera Sturm", "The fallen spirit of Derek Herrera Sturm. What an unfortunate way to go out...", 10, 0, new Stats(1, 0), 10);
+        public static Derek derek = new Derek("Ghost of Derek Herrera Sturm", "The fallen spirit of Derek Herrera Sturm. What an unfortunate way to go out...", 30, 0, new Stats(1, 0), 10);
 
         public Derek(string name, string description, int sanity, int energy, Stats stats, int coinsDropped) : base(name, description, sanity, energy, stats, coinsDropped)
         {

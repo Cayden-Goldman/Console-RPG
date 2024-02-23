@@ -31,16 +31,16 @@ namespace Console_RPG
             //Console.ReadLine();
             //Console.Clear();
             //PrintLineSlow("Sophie...");
-            //Thread.Sleep(500);
+            //Thread.Sleep(750);
             //Console.Clear();
             //PrintLineSlow("You must wake up...");
-            //Thread.Sleep(500);
+            //Thread.Sleep(750);
             //Console.Clear();
             //PrintLineSlow("You must get out...");
-            //Thread.Sleep(500);
+            //Thread.Sleep(750);
             //Console.Clear();
             //PrintLineSlow("You are our only hope to escape...");
-            //Thread.Sleep(500);
+            //Thread.Sleep(750);
             //Console.Clear();
             Location.cellar.SetNearbyLocations(east: Location.hall);
             Location.hall.SetNearbyLocations(east: Location.midNowhere1);
@@ -52,7 +52,7 @@ namespace Console_RPG
             Location.theGrave.SetNearbyLocations(south: Location.midNowhere7);
             Location.theHall.SetNearbyLocations(west: Location.midNowhere4);
 
-            Location.theGrave.Resolve(new List<Player>() {Player.player});
+            Location.cellar.Resolve(new List<Player>() {Player.player});
         }
         public static void PrintLineSlow(string output)
         {

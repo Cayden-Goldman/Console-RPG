@@ -31,6 +31,13 @@ namespace Console_RPG
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
             Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"{target.name} has ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{target.currentSanity} HP");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" left.");
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
         public override void DoTurn(List<Player> players, List<Enemy> enemies)

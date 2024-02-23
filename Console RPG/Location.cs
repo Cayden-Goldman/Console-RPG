@@ -95,14 +95,19 @@ namespace Console_RPG
             Console.Clear();
             Location nextLocation = null;
 
-            if (direction == "north")
+            if (direction.Contains("no"))
                 nextLocation = this.north;
-            if (direction == "east")
+            if (direction.Contains("ea"))
                 nextLocation = this.east;
-            if (direction == "south")
+            if (direction.Contains("so"))
                 nextLocation = this.south;
-            if (direction == "west")
+            if (direction.Contains("we"))
                 nextLocation = this.west;
+            else
+            {
+                Console.WriteLine("lajharggsafgggrrguuh");
+                
+            }
 
             nextLocation.Resolve(players);
         }
