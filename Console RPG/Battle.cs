@@ -23,8 +23,11 @@ namespace Console_RPG
                 //Loop through all players(only one here but still)
                 foreach (var item in players)
                 {
+                    if (item.currentSanity > 0)
+                    {
                     Console.WriteLine(item.name + "'s Turn:");
                     item.DoTurn(players, enemies);
+                    }
                 }
                 if (enemies.TrueForAll(enemy => enemy.currentSanity <= 0))
                 {
@@ -36,8 +39,11 @@ namespace Console_RPG
                 //Loop through all enemies
                 foreach (var item in enemies)
                 {
+                    if (item.currentSanity > 0)
+                    {
                     Console.WriteLine(item.name + "'s Turn:");
                     item.DoTurn(players, enemies);
+                    }
                 }
 
                 if (players.TrueForAll(player => player.currentSanity <= 0))

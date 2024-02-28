@@ -7,6 +7,7 @@ namespace Console_RPG
     //Inheritance
     class Player : Entity
     {
+        public static List<Item> Inventory = new List<Item>() { SanityPotion.lesserSanityPot };
         
         public static Player player = new Player("Sophie", "Literally you.", 50, 5, new Stats(10, 0));
 
@@ -25,6 +26,19 @@ namespace Console_RPG
             return choices[index - 1];
             
         }
+        public Item ChooseItem(List<Item> choices)
+        {
+            Console.WriteLine("Which item would you like to use?");
+            for (int i = 0; i < choices.Count; i++)
+            {
+                Console.Write($"{i + 1}: {choices[i].name}  ");
+            }
+            Console.WriteLine();
+
+            int index = Convert.ToInt32(Console.ReadLine());
+            return choices[index - 1];
+
+        }
         public override void Attack(Entity target)
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -42,8 +56,26 @@ namespace Console_RPG
 
         public override void DoTurn(List<Player> players, List<Enemy> enemies)
         {
+            Console.WriteLine("What do you want to do?");
+            Console.WriteLine("ATTACK | ITEM");
+            string choice = Console.ReadLine();
+            if (choice == "ATTACK")
+            {
             Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
             Attack(target);
+            }
+            else if (choice == "ITEM")
+            {
+                Item item = ChooseItem(Inventory);
+                Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
+                item.Use(this, target);
+                Inventory.Remove(item);
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid option.");
+                DoTurn(players, enemies);
+            }
         }
 
         public void UseItem(Item item, Entity target)

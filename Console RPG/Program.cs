@@ -53,6 +53,7 @@ namespace Console_RPG
             Location.theHall.SetNearbyLocations(west: Location.midNowhere4);
 
             Location.cellar.Resolve(new List<Player>() {Player.player});
+
         }
         public static void PrintLineSlow(string output)
         {
