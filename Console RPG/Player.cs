@@ -8,6 +8,7 @@ namespace Console_RPG
     class Player : Entity
     {
         public static List<Item> Inventory = new List<Item>() { SanityPotion.lesserSanityPot };
+        public static int CoinCount = 0;
         
         public static Player player = new Player("Sophie", "Literally you.", 50, 5, new Stats(10, 0));
 
@@ -58,13 +59,13 @@ namespace Console_RPG
         {
             Console.WriteLine("What do you want to do?");
             Console.WriteLine("ATTACK | ITEM");
-            string choice = Console.ReadLine();
-            if (choice == "ATTACK")
+            string choice = Console.ReadLine().ToLower();
+            if (choice == "attack")
             {
             Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
             Attack(target);
             }
-            else if (choice == "ITEM")
+            else if (choice == "item")
             {
                 Item item = ChooseItem(Inventory);
                 Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());

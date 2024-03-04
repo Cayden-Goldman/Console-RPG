@@ -40,6 +40,7 @@ namespace Console_RPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
@@ -67,6 +68,7 @@ namespace Console_RPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
@@ -95,8 +97,38 @@ namespace Console_RPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
 
+    class Thing : Enemy
+    {
+
+        public static Thing thing = new Thing("@&)%^@(*&#$&%(!", "A creature that always seems blurry and faded...   ...)!&$*&!$#???", 200, 5, new Stats(15, 15), 0);
+
+        public Thing(string name, string description, int sanity, int energy, Stats stats, int coinsDropped) : base(name, description, sanity, energy, stats, coinsDropped)
+        {
+
+        }
+
+        public override Entity ChooseTarget(List<Entity> choices)
+        {
+            return choices[0];
+        }
+
+        public override void DoTurn(List<Player> players, List<Enemy> enemies)
+        {
+            Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
+            Attack(target);
+        }
+        public override void Attack(Entity target)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
+            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+    }
 }

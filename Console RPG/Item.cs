@@ -11,12 +11,11 @@ namespace Console_RPG
         public int sellValue;
         public string rarity;
 
-        public Item(string name, string flavorText, int shopPrice, int sellValue, string rarity)
+        public Item(string name, string flavorText, int shopPrice, string rarity)
         {
             this.name = name;
             this.flavorText = flavorText;
             this.shopPrice = shopPrice;
-            this.sellValue = sellValue;
             this.rarity = rarity;
         }
 
