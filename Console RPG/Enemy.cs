@@ -40,8 +40,18 @@ namespace Console_RPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
-            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
+            if (target.currentSanity < 0)
+            {
+                target.currentSanity = 0;
+            }
             Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"{target.name} has ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{target.currentSanity} HP");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" left.");
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
     class Creature : Enemy
@@ -68,8 +78,18 @@ namespace Console_RPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
-            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
+            if (target.currentSanity < 0)
+            {
+                target.currentSanity = 0;
+            }
             Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"{target.name} has ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{target.currentSanity} HP");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" left.");
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
     class Derek : Enemy
@@ -97,8 +117,19 @@ namespace Console_RPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
-            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
+            if (target.currentSanity < 0)
+            {
+                target.currentSanity = 0;
+            }
             Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"{target.name} has ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{target.currentSanity} HP");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" left.");
+            Console.WriteLine();
+            Console.WriteLine();
+
         }
     }
 
@@ -127,8 +158,19 @@ namespace Console_RPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
             target.currentSanity = target.currentSanity - this.stats.attack;
-            Console.WriteLine($"{target.name} has {target.currentSanity} left!");
+            if (target.currentSanity < 0)
+            {
+                target.currentSanity = 0;
+            }
             Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"{target.name} has ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{target.currentSanity} HP");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" left.");
+            Console.WriteLine();
+            Console.WriteLine();
+
         }
     }
 }

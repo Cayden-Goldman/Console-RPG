@@ -7,6 +7,7 @@ namespace Console_RPG
     class Battle : Event
     {
         public List<Enemy> enemies;
+        public int goldObtained = 0;
 
         public Battle(List<Enemy> enemies) : base(false)
         {
@@ -32,6 +33,17 @@ namespace Console_RPG
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("You won, YIPPEE :)");
                     Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write($"You got");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    foreach (var item in enemies)
+                    {
+                        goldObtained += item.coinsDropped;
+                    }
+                    Player.CoinCount += goldObtained;
+                    Console.Write($" {goldObtained} Gold!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine();
+                    Console.WriteLine();
                     break;
                 }
                 //Loop through all enemies
@@ -49,7 +61,7 @@ namespace Console_RPG
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("You died, womp womp :(");
                     Console.ForegroundColor = ConsoleColor.White;
-                    break;
+                    System.Environment.Exit(0);
                 }
             }
         }
