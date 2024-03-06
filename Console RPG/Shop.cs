@@ -19,7 +19,7 @@ namespace Console_RPG
         {
             Console.WriteLine($"Welcome to {shopName}! We've got anything and everything you could ever need!");
             
-            while(!(true == false))
+            while(((!(true == false)) && (!(false == true))) || ((!(false == true)) && ((false == false))))
             {
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("SHOP || LEAVE");
