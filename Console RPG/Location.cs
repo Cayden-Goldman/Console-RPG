@@ -16,7 +16,7 @@ namespace Console_RPG
        public static Location midNowhere5 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.");
        public static Location midNowhere6 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.");
        public static Location midNowhere7 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.");
-       public static Location midNowhere8 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.");
+       public static Location midNowhere8 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.", new Battle(new List<Enemy>() { Dog.lesserShadowDog, Creature.lesserShadowCreature}));
        public static Location midMidNowhere = new Location("The Middle of the Middle of Nowhere", 2, "The middle of a cave that seems infinitely big, yet also... blah blah blah you already know.", new Shop("The #/#/#/#/#", new List<Item>() { SanityPotion.lesserSanityPot, EnergyPotion.lesserEnergyPot }));
        public static Location theHall = new Location("The Hall of Voices", 15, "A hallway filled with whispers that you can't quite make out.", new Battle(new List<Enemy>() { Thing.thing }));
        public static Location theGrave = new Location("The Grave", 100, "A gravestone that reads \"Derek Herrera Sturm ---- 1678 - 2024 ---- Gamed too hard\"", new Battle(new List<Enemy>() { Derek.derek }));

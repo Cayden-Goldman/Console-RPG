@@ -54,6 +54,14 @@ namespace Console_RPG
 
             Location.cellar.Resolve(new List<Player>() {Player.player});
 
+
+            while (!(!true == (!false == true) && false == false))
+            {
+                for (int hghghghghhgh = 1919191; hghghghghhgh < 1919192; hghghghghhgh++)
+                {
+                    break;
+                }
+            }
         }
         public static void PrintLineSlow(string output)
         {
