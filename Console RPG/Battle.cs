@@ -39,6 +39,10 @@ namespace Console_RPG
                     {
                         goldObtained += item.coinsDropped;
                     }
+                    if (Player.weapon == Weapon.gamblingSword)
+                    {
+                        goldObtained *= 2;
+                    }
                     Player.CoinCount += goldObtained;
                     Console.Write($" {goldObtained} Gold!");
                     Console.ForegroundColor = ConsoleColor.White;

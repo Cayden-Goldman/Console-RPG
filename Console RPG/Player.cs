@@ -12,8 +12,8 @@ namespace Console_RPG
         
         public static Player player = new Player("Sophie", "Literally you.", 50, 5, new Stats(10, 0));
 
-        public Armor headgear, chestpiece, legwear;
-        public Weapon weapon;
+        public static Armor headgear, chestpiece, legwear;
+        public static Weapon weapon;
 
         public Player(string name, string description, int sanity, int energy, Stats stats) : base(name, description, sanity, energy, stats) { }
 
@@ -76,7 +76,7 @@ namespace Console_RPG
             else if (choice == "item")
             {
                 Item item = ChooseItem(Inventory);
-                Entity target = ChooseTarget(enemies.Cast<Entity>().ToList());
+                Entity target = ChooseTarget(players.Cast<Entity>().ToList());
                 item.Use(this, target);
                 Inventory.Remove(item);
             }

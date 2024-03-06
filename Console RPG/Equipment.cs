@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Console_RPG
@@ -49,8 +50,10 @@ namespace Console_RPG
         public int dmgIncrease;
 
         public static Weapon stick = new Weapon("Stick", "Just a pointy stick. Seemingly taken from a birch tree", 0, "Common", false, 0);
-        public static Weapon rustySword = new Weapon("Rust Sword", "A rusty bronze sword. Should work for now.", 15, "Common", false, 5);
-        public static Weapon swordOfVoices = new Weapon("The Sword of Voices", "All of the voices in your head channeled into a powerful blade. *Side effects may include schizophrenia", 100, "Legendary", false, 25);
+        public static Weapon rustySword = new Weapon("Rusty Sword", "A rusty bronze sword. Should work for now.", 15, "Common", false, 5);
+        public static Weapon swordOfThorns = new Weapon("Sword of Thorns", "A plant sword covered in thorns.", 30, "Rare", false, 15);
+        public static Weapon gamblingSword = new Weapon("Sword of Fortune", "A sword seemingly touched by Midas. You feel like you should always bet on yourself while weilding it.", 50, "Epic", false, 15);
+        public static Weapon swordOfVoices = new Weapon("The Sword of Voices", "All of the voices in your head channeled into a powerful blade. *Side effects may include schizophrenia*", 100, "Legendary", false, 35);
 
         public Weapon(string name, string flavorText, int shopPrice, string rarity, bool isEquipped, int dmgIncrease) : base(name, flavorText, shopPrice, rarity, isEquipped)
         {
