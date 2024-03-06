@@ -26,6 +26,7 @@ namespace Console_RPG
                 string input = Console.ReadLine().ToLower();
                 if (input == "shop")
                 {
+                    Console.WriteLine($"You have {Player.CoinCount} Gold");
                     Item item = ChooseItem(this.items);
                     if (Player.CoinCount >= item.shopPrice)
                     {
