@@ -12,7 +12,7 @@ namespace Console_RPG
         
         public static Player player = new Player("Sophie", "Literally you.", 50, 5, new Stats(10, 0));
 
-        public static Armor headgear, chestpiece, legwear;
+        public static Armor chestpiece, boots;
         public static Weapon weapon;
 
         public Player(string name, string description, int sanity, int energy, Stats stats) : base(name, description, sanity, energy, stats) { }
