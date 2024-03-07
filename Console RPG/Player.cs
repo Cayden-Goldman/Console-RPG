@@ -25,10 +25,19 @@ namespace Console_RPG
                 Console.Write($"{i + 1}: {choices[i].name}  ");
             }
             Console.WriteLine();
+            try
+            {
+                int index = Convert.ToInt32(Console.ReadLine());
 
-            int index = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-            return choices[index - 1];
+                Console.Clear();
+                return choices[index - 1];
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Please enter a valid option.");
+                return ChooseTarget(choices);
+            }
+            
             
         }
         public Item ChooseItem(List<Item> choices)

@@ -19,10 +19,8 @@ namespace Console_RPG
 
             Console.WriteLine($"You have entered a battle!");
             Console.WriteLine();
-            //Loop the turn system
             while (true)
             {
-                //Loop through all players(only one here but still)
                 foreach (var item in players)
                 {
                     Console.WriteLine($"{item.name}");
@@ -67,7 +65,6 @@ namespace Console_RPG
                     break;
                 }
                 EZ:
-                //Loop through all enemies
                 foreach (var item in enemies)
                 {
                     foreach (var pla in players)
