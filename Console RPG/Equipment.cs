@@ -58,7 +58,7 @@ namespace Console_RPG
     class Chestpiece : Armor
     {
         public static Boots clothChestpiece = new Boots("Shirt", "Just an everyday regular shirt.", 0, "Common", true, 0, 0);
-        public static Boots leatherChestpieces = new Boots("Leather Chestpiece", "Chestpiece made of leather. It seems like it might provide a small amount of protection.", 0, "Common", false, 1, 5);
+        public static Boots leatherChestpiece = new Boots("Leather Chestpiece", "Chestpiece made of leather. It seems like it might provide a small amount of protection.", 0, "Common", false, 1, 5);
         public static Boots sturdyChestpiece = new Boots("Sturdy Chestpiece", "Sturdy Chestpiece made of reinforced leather and metal sheets. It provides a medium amount of protection.", 10, "Uncommon", false, 5, 15);
         public Chestpiece(string name, string flavorText, int shopPrice, string rarity, bool isEquipped, int defIncrease, int sanIncrease) : base(name, flavorText, shopPrice, rarity, isEquipped, defIncrease, sanIncrease)
         {
@@ -70,7 +70,7 @@ namespace Console_RPG
     {
         public int dmgIncrease;
 
-        public static Weapon stick = new Weapon("Stick", "Just a pointy stick. Seemingly taken from a birch tree", 0, "Common", false, 0);
+        public static Weapon stick = new Weapon("Stick", "Just a pointy stick. Seemingly taken from a birch tree", 0, "Common", true, 0);
         public static Weapon rustySword = new Weapon("Rusty Sword", "A rusty bronze sword. Should work for now.", 15, "Common", false, 5);
         public static Weapon swordOfThorns = new Weapon("Sword of Thorns", "A plant sword covered in thorns.", 30, "Rare", false, 15);
         public static Weapon gamblingSword = new Weapon("Sword of Fortune", "A sword seemingly touched by Midas. You feel like you should always bet on yourself while weilding it.", 50, "Epic", false, 15);
