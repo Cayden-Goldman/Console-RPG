@@ -25,13 +25,11 @@ namespace Console_RPG
                 {
                     Console.WriteLine($"{item.name}");
                     Console.WriteLine($"Sanity: {item.currentSanity} / {item.maxSanity}");
-                    Console.WriteLine($"Energy: {item.currentEnergy} / {item.maxEnergy}");
                     Console.WriteLine();
                     foreach (var enem in enemies)
                     {
                         Console.WriteLine($"{enem.name}");
                         Console.WriteLine($"Sanity: {enem.currentSanity} / {enem.maxSanity}");
-                        Console.WriteLine($"Energy: {enem.currentEnergy} / {enem.maxEnergy}");
                         Console.WriteLine();
                     }
                     if (item.currentSanity > 0)
@@ -53,10 +51,6 @@ namespace Console_RPG
                         goldObtained += item.coinsDropped;
                         item.currentSanity = item.maxSanity;
                     }
-                    if (Player.weapon == Weapon.gamblingSword)
-                    {
-                        goldObtained *= 2;
-                    }
                     Player.CoinCount += goldObtained;
                     Console.Write($" {goldObtained} Gold!");
                     Console.ForegroundColor = ConsoleColor.White;
@@ -71,12 +65,10 @@ namespace Console_RPG
                     {
                         Console.WriteLine($"{pla.name}");
                         Console.WriteLine($"Sanity: {pla.currentSanity} / {pla.maxSanity}");
-                        Console.WriteLine($"Energy: {pla.currentEnergy} / {pla.maxEnergy}");
                         Console.WriteLine();
                     }
                     Console.WriteLine($"{item.name}");
                     Console.WriteLine($"Sanity: {item.currentSanity} / {item.maxSanity}");
-                    Console.WriteLine($"Energy: {item.currentEnergy} / {item.maxEnergy}");
                     Console.WriteLine();
                     if (item.currentSanity > 0)
                     {

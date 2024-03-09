@@ -58,7 +58,15 @@ namespace Console_RPG
             Console.WriteLine();
 
             int index = Convert.ToInt32(Console.ReadLine());
+            try
+            {
             return choices[index - 1];
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Please enter a valid option.");
+                return ChooseItem(choices);
+            }
 
         }
     }

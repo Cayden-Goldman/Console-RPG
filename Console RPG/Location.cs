@@ -17,10 +17,12 @@ namespace Console_RPG
        public static Location midNowhere5 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.");
        public static Location midNowhere6 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.");
        public static Location midNowhere7 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.");
-       public static Location midNowhere8 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.", new Battle(new List<Enemy>() { Dog.lesserShadowDog, Creature.lesserShadowCreature}));
-       public static Location midMidNowhere = new Location("The Middle of the Middle of Nowhere", 2, "The middle of a cave that seems infinitely big, yet also... blah blah blah you already know.", new Shop("The #/#/#/#/#", new List<Item>() { SanityPotion.lesserSanityPot, EnergyPotion.lesserEnergyPot, Boots.leatherBoots, Boots.sturdyBoots, Chestpiece.leatherChestpiece, Chestpiece.sturdyChestpiece, Weapon.rustySword, Weapon.swordOfThorns }));
+       public static Location midNowhere8 = new Location("The Middle of Nowhere", 1, "A cave that seems infinitely big, yet also like you are being suffocated by the walls.", new Battle(new List<Enemy>() { Dog.greaterShadowDog }));
+       public static Location midMidNowhere = new Location("The Middle of the Middle of Nowhere", 2, "The middle of a cave that seems infinitely big, yet also... blah blah blah you already know.", new Shop("The #/#/#/#/#", new List<Item>() { SanityPotion.lesserSanityPot, Boots.leatherBoots, Boots.sturdyBoots, Chestpiece.leatherChestpiece, Chestpiece.sturdyChestpiece, Weapon.rustySword, Weapon.swordOfThorns }));
        public static Location theHall = new Location("The Hall of Voices", 15, "A hallway filled with whispers that you can't quite make out.", new Battle(new List<Enemy>() { Thing.thing }));
        public static Location theGrave = new Location("The Grave", 100, "A gravestone that reads \"Derek Herrera Sturm ---- 1678 - 2024 ---- Gamed too hard\"", new Battle(new List<Enemy>() { Derek.derek }));
+       public static Location shopPlace = new Location("\"Abandoned\" Shack", 10, "A shack that seems to be abandoned", new Shop("The Ratorium", new List<Item>() { Boots.goldBoots, Chestpiece.goldChestpiece, Weapon.swordOfVoices, SanityPotion.greaterSanityPot }));
+       public static Location theEnd = new Location("The End", 0, "Literall the end of the game:)))", new TheEnd(false));
 
         public string name;
         public int insanityStrength;

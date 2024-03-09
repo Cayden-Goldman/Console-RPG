@@ -17,6 +17,7 @@ namespace Console_RPG
 
     class Dog : Enemy
     {
+        int damageTaken;
         public static Dog lesserShadowDog = new Dog("Lesser Shadow Hound", "A shadowy pup shaped creature. I wouldn't reccomend petting it...", 20, 5, new Stats(5, 0), 10);
         public static Dog greaterShadowDog = new Dog("Greater Shadow Hound", "A shadowy wolf shaped creature. I definitely wouldn't reccomend petting it...", 80, 5, new Stats(15, 5), 50);
 
@@ -37,9 +38,14 @@ namespace Console_RPG
         }
         public override void Attack(Entity target)
         {
+            damageTaken = this.stats.attack - target.stats.defense;
+            if (damageTaken <= 0)
+            {
+                damageTaken = 0;
+            }
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
-            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {damageTaken} damage!");
+            target.currentSanity = target.currentSanity - damageTaken;
             if (target.currentSanity < 0)
             {
                 target.currentSanity = 0;
@@ -56,6 +62,7 @@ namespace Console_RPG
     }
     class Creature : Enemy
     {
+        int damageTaken;
         public static Creature lesserShadowCreature = new Creature("Lesser Shadow Creature", "A small shadowy blob filled with nothing but darkness.", 20, 5, new Stats(5, 0), 10);
         public static Creature greaterShadowCreature = new Creature("Greater Shadow Creature", "A lanky shadow blob filled with nothing but hatred and darkness.", 150, 5, new Stats(10, 10), 50);
         public Creature(string name, string description, int sanity, int energy, Stats stats, int coinsDropped) : base(name, description, sanity, energy, stats, coinsDropped)
@@ -75,9 +82,14 @@ namespace Console_RPG
         }
         public override void Attack(Entity target)
         {
+            damageTaken = this.stats.attack - target.stats.defense;
+            if (damageTaken <= 0)
+            {
+                damageTaken = 0;
+            }
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
-            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {(this.stats.attack - target.stats.defense)} damage!");
+            target.currentSanity = target.currentSanity - (this.stats.attack - target.stats.defense);
             if (target.currentSanity < 0)
             {
                 target.currentSanity = 0;
@@ -94,7 +106,7 @@ namespace Console_RPG
     }
     class Derek : Enemy
     {
-
+        int damageTaken;
         public static Derek derek = new Derek("Ghost of Derek Herrera Sturm", "The fallen spirit of Derek Herrera Sturm. What an unfortunate way to go out...", 30, 0, new Stats(1, 0), 10);
 
         public Derek(string name, string description, int sanity, int energy, Stats stats, int coinsDropped) : base(name, description, sanity, energy, stats, coinsDropped)
@@ -114,9 +126,14 @@ namespace Console_RPG
         }
         public override void Attack(Entity target)
         {
+            damageTaken = this.stats.attack - target.stats.defense;
+            if (damageTaken <= 0)
+            {
+                damageTaken = 0;
+            }
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
-            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {(this.stats.attack - target.stats.defense)} damage!");
+            target.currentSanity = target.currentSanity - (this.stats.attack - target.stats.defense);
             if (target.currentSanity < 0)
             {
                 target.currentSanity = 0;
@@ -135,8 +152,8 @@ namespace Console_RPG
 
     class Thing : Enemy
     {
-
-        public static Thing thing = new Thing("@&)%^@(*&#$&%(!", "A creature that always seems blurry and faded...   ...)!&$*&!$#???", 200, 5, new Stats(15, 15), 0);
+        int damageTaken;
+        public static Thing thing = new Thing("@&)%^@(*&#$&%(!", "A creature that always seems blurry and faded...   ...)!&$*&!$#???", 200, 5, new Stats(60, 15), 0);
 
         public Thing(string name, string description, int sanity, int energy, Stats stats, int coinsDropped) : base(name, description, sanity, energy, stats, coinsDropped)
         {
@@ -155,9 +172,14 @@ namespace Console_RPG
         }
         public override void Attack(Entity target)
         {
+            damageTaken = this.stats.attack - target.stats.defense;
+            if (damageTaken <= 0)
+            {
+                damageTaken = 0;
+            }
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{this.name} attacked {target.name} and did {this.stats.attack} damage!");
-            target.currentSanity = target.currentSanity - this.stats.attack;
+            Console.WriteLine($"{this.name} attacked {target.name} and did {(this.stats.attack - target.stats.defense)} damage!");
+            target.currentSanity = target.currentSanity - (this.stats.attack - target.stats.defense);
             if (target.currentSanity < 0)
             {
                 target.currentSanity = 0;
